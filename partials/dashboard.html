@@ -1,0 +1,99 @@
+<div id="content-wrapper" ng-controller="IndexController">
+	<div class="page-content">
+	  <!-- Header Bar -->
+	  <div class="row header col-xs-12">
+		<div class="user pull-right">
+		  <div class="item dropdown">
+			<a href="#" class="dropdown-toggle"><img src="img/avatar.jpg" alt=""></a>
+		  </div>
+		</div>
+		<div class="meta">
+		  <div class="page">Dashboard</div>
+		  <div class="breadcrumb-links">Home / Dashboard</div>
+		</div>
+	  </div>
+	  <!-- End Header Bar -->
+
+	  <!-- Dashboard Boxes -->
+	  <div class="row">
+		<div class="col-lg-3 col-md-6 col-xs-12">
+		  <div class="widget">
+			<div class="widget-header">
+			  <div class="widget-icon green pull-left">
+				<i class="fa fa-users"></i>
+			  </div>
+			  <div class="title">{{ usersCount }} </div>
+			  <div class="comment">Users</div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-lg-3 col-md-6 col-xs-12">
+		  <div class="widget">
+			<div class="widget-header">
+			  <div class="widget-icon green pull-left">
+				<i class="fa fa-users"></i>
+			  </div>
+			  <div class="title"> {{ widgetsCount }} </div>
+			  <div class="comment">Widgets</div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  <!-- Tables -->
+	  <div class="row">
+
+		<!-- Users listing -->
+		<div class="col-lg-6">
+		  <div class="widget">
+			<div class="widget-header">Users
+			  <div class="pull-right"><input type="text" class="form-control input-sm" ng-model="searchUserText"></div>
+			</div>
+			<div class="table-responsive">
+			  <table class="table">
+				<thead>
+				  <tr>
+					<th class="text-center">ID</th>
+					<th>Name</th>
+				  </tr>
+				</thead>
+				<tbody id="usersBody">						
+						<tr ng-repeat="user in users | filter:searchUserText" ng-click="GoToUserDetailedPage(this)">
+						<td>{{ user.id }}</td>
+						<td>{{ user.name }}</td>
+					</tr>
+				</tbody>
+			  </table>
+			</div>
+		  </div>
+		</div><!-- End Users -->
+
+		<!-- Widget listing -->
+		<div class="col-lg-6">
+		  <div class="widget">
+			<div class="widget-header">Widgets
+			  <div class="pull-right"><input type="text" class="form-control input-sm" ng-model="searchWidgetText"></div>
+			</div>
+			<div class="table-responsive">
+			  <table class="table">
+				<thead>
+				  <tr>
+					<th class="text-center">ID</th>
+					<th>Name</th>
+				  </tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="widget in widgets | filter:searchWidgetText" ng-click="GoToWidgetDetailedPage(this)">
+						<td>{{ widget.id }}</td>
+						<td>{{ widget.name }}</td>
+					</tr>
+				</tbody>
+			  </table>
+			</div>
+		  </div>
+		</div><!-- End Widgets -->
+
+	  </div><!-- End Tables -->
+
+	</div><!-- End Page Content -->
+  </div><!-- End Content Wrapper -->
