@@ -41,7 +41,8 @@ controller('WidgetController', function($scope, redVenturesAPI ,$window, $routeP
 		var type = "POST";
 		if (id) { type = "PUT"; }		
 		
-		if (redVenturesAPI.InsertWidget("name=" + name + "&color=" + color + "&price=" + price + "&melts=" + melts + "&inventory=" + inventory, type, id))
+		var json = '{"name":"' + name + '","color": "' + color + '","price": "' + price + '","melts":' + melts + ',"inventory":"' + inventory + '"}';		
+		if (redVenturesAPI.InsertWidget(json, type, id))
 		{
 			alert("Requested was processed successfully!");
 			$window.location.href = '#widgets';	

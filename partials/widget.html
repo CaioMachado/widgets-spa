@@ -38,8 +38,8 @@
 				<div class="controls">
 				  <div class="input-prepend">
 				  Price
-					<span class="add-on">$</span>
-					<input id="widget-price" name="widget-price" class="input-medium" placeholder="0.00" type="text" value="{{ price }}" ng-model="price"">
+					<span class="add-on">$</span>					
+					<input id="widget-price" name="widget-price" type="Decimal" class="input-medium" placeholder="Decimal" ng-model="price" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"  value="{{ price }}"/>
 				  </div>
 				</div>
 
@@ -66,7 +66,7 @@
 				<!-- Inventory -->
 				<div class="controls">
 				  Inventory
-				  <input id="widget-count" name="widget-count" type="text" placeholder="#?" class="input-small" value="{{ inventory }}" ng-model="inventory">
+				  <input id="widget-count" name="widget-count" type="number" placeholder="#?" class="input-small" value="{{ inventory }}" ng-model="inventory">
 				</div>
 			  </form>
 	

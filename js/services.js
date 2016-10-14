@@ -35,7 +35,7 @@ angular.module('AngularApp.services', [])
       });
     }		
 	
-	redVenturesAPI.InsertWidget = function (widget, type, id) {
+	redVenturesAPI.InsertWidget = function (json, type, id) {
 				
 		var url = 'http://spa.tglrw.com:4000/widgets';
 		if (id)
@@ -43,8 +43,8 @@ angular.module('AngularApp.services', [])
 		return $http({
           method  : type,
           url     : url,
-          data    : widget,
-          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+          data    : json,
+		  headers : {'Content-Type': 'application/json'}
          })
           .success(function(data) { return true; })
 		  .error(function(data) { return false; })		  
