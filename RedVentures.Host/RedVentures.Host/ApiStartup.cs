@@ -24,7 +24,7 @@ namespace RedVentures.Host
             config.MapHttpAttributeRoutes();
 
             config
-                .EnableSwagger(c => c.SingleApiVersion("v1", "A title for your API"))
+                .EnableSwagger(c => c.SingleApiVersion("v1", "RedVentures - BackEnd API"))
                 .EnableSwaggerUi();
 
             return config;
