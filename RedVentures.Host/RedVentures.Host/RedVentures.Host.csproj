@@ -120,20 +120,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\HttpResponseHelper.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\WidgetsController.cs" />
-    <Compile Include="Repository\IUserRepository.cs" />
+    <Compile Include="Helpers\LoginAuthenticator.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\UserModelDetailed.cs" />
     <Compile Include="Models\WidgetModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ApiStartup.cs" />
     <Compile Include="AuthorizationServerProvider.cs" />
-    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Repository\DataRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

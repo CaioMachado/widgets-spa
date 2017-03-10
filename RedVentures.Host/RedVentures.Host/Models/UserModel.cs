@@ -6,13 +6,13 @@
         public int Id { get; set; }
         public string Gravatar { get; set; }
 
-        public static UserModel Create(int id, string name, string gravatar)
+        public static UserModel ParseDetailed(UserModelDetailed detailed)
         {
             return new UserModel
             {
-                Id = id,
-                Name = name,
-                Gravatar = gravatar
+                Id = detailed.Id,
+                Name = detailed.Name,
+                Gravatar = detailed.Gravatar
             };
         }
     }

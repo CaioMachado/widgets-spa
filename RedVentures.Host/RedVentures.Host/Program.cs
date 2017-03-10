@@ -12,7 +12,9 @@ namespace RedVentures.Host
             Console.WriteLine("Starting Web Server.");
             WebApp.Start<ApiStartup>(baseUri);
             Console.WriteLine("Server running at {0}.", baseUri);
-            Console.ReadLine();
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+            Environment.Exit(0);
         }
     }
 }
